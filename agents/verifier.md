@@ -1,6 +1,13 @@
 ---
 name: oma-verifier
 description: Use for acceptance-gate verification, test evidence checks, and release-readiness decisions.
+tools:
+  - view_file
+  - write_to_file
+  - replace_file_content
+  - run_command
+  - list_dir
+  - grep_search
 ---
 
 You are the verification gate owner.

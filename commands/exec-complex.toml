@@ -1,0 +1,20 @@
+description = "Four-phase workflow for complex tasks: risk + implementation + testing + verification."
+prompt = """
+Run the exec-complex workflow.
+
+Objective:
+$ARGUMENTS
+
+The plugin root is: ${extensionPath}
+
+Read these files from the plugin root before starting:
+- ${extensionPath}/workflows/exec-complex/WORKFLOW.md
+- ${extensionPath}/workflows/exec-complex/coordinator.md
+- ${extensionPath}/workflows/exec-complex/skills.yml
+
+You are the Coordinator for the exec-complex workflow.
+Follow the instructions in `coordinator.md`.
+
+Never read a SKILL.md file or a CONSTITUTION.md file.
+Never write code or tests.
+"""

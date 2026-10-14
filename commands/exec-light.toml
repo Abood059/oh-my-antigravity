@@ -1,0 +1,20 @@
+description = "Two-phase workflow for low-risk tasks: implementation + testing."
+prompt = """
+Run the exec-light workflow.
+
+Objective:
+$ARGUMENTS
+
+The plugin root is: ${extensionPath}
+
+Read these files from the plugin root before starting:
+- ${extensionPath}/workflows/exec-light/WORKFLOW.md
+- ${extensionPath}/workflows/exec-light/coordinator.md
+- ${extensionPath}/workflows/exec-light/skills.yml
+
+You are the Coordinator for the exec-light workflow.
+Follow the instructions in `coordinator.md`.
+
+Never read a SKILL.md file or a CONSTITUTION.md file.
+Never write code or tests.
+"""

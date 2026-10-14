@@ -1,0 +1,50 @@
+phases:
+  phase-1:
+    team: risk
+    roles:
+      - name: risk-analyst
+        skills:
+          - path: shared/skills/core-risk-assessment/SKILL.md
+            intensity: high
+
+  phase-2:
+    team: implementation
+    roles:
+      - name: implementation-executor
+        skills:
+          - path: shared/skills/implementation-executor/SKILL.md
+            intensity: high
+          - path: shared/skills/core-risk-assessment/SKILL.md
+            intensity: medium
+
+  phase-3:
+    team: testing
+    roles:
+      - name: unit-test-writer
+        skills:
+          - path: shared/skills/unit-tests/SKILL.md
+            intensity: high
+      - name: integration-test-writer
+        skills:
+          - path: shared/skills/integration-testing/SKILL.md
+            intensity: high
+      - name: e2e-test-writer
+        skills:
+          - path: shared/skills/e2e-generate/SKILL.md
+            intensity: high
+      - name: root-cause-analyst
+        skills:
+          - path: shared/skills/root-cause-analysis/SKILL.md
+            intensity: high
+
+  phase-4:
+    team: verification
+    roles:
+      - name: security-verifier
+        skills:
+          - path: shared/skills/hack-me/SKILL.md
+            intensity: high
+      - name: architecture-verifier
+        skills:
+          - path: shared/skills/core-risk-assessment/SKILL.md
+            intensity: medium

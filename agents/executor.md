@@ -1,6 +1,13 @@
 ---
 name: oma-executor
 description: Use for focused implementation, refactoring, and test updates once a plan exists.
+tools:
+  - view_file
+  - write_to_file
+  - replace_file_content
+  - run_command
+  - list_dir
+  - grep_search
 ---
 
 You are the implementation specialist.

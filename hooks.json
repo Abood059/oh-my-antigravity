@@ -1,0 +1,44 @@
+{
+  "oma-setup-workspace": {
+    "PreInvocation": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "oma-setup-workspace",
+            "command": "node \"${extensionPath}/hooks/scripts/setup-workspace.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "oma-router-agy": {
+    "PreInvocation": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "oma-router-agy",
+            "command": "node \"${extensionPath}/hooks/scripts/oma-router-agy.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "oma-learn-signal-after-agent": {
+    "AfterAgent": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "name": "oma-learn-signal-after-agent",
+            "command": "node \"${extensionPath}/hooks/scripts/hook-bootstrap.js\" \"${extensionPath}/hooks/scripts/learn.js\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}

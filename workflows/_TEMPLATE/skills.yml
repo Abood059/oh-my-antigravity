@@ -1,0 +1,18 @@
+phases:
+  phase-1:
+    team: <team-1>
+    roles:
+      - name: <role-1>
+        skills:
+          - path: shared/skills/<skill-1>/SKILL.md
+            intensity: high
+          - path: shared/skills/<skill-2>/SKILL.md
+            intensity: medium
+
+  phase-2:
+    team: <team-2>
+    roles:
+      - name: <role-2>
+        skills:
+          - path: shared/skills/<skill-3>/SKILL.md
+            intensity: high

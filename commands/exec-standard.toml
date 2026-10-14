@@ -1,0 +1,20 @@
+description = "Three-phase workflow for standard tasks: implementation + testing + verification."
+prompt = """
+Run the exec-standard workflow.
+
+Objective:
+$ARGUMENTS
+
+The plugin root is: ${extensionPath}
+
+Read these files from the plugin root before starting:
+- ${extensionPath}/workflows/exec-standard/WORKFLOW.md
+- ${extensionPath}/workflows/exec-standard/coordinator.md
+- ${extensionPath}/workflows/exec-standard/skills.yml
+
+You are the Coordinator for the exec-standard workflow.
+Follow the instructions in `coordinator.md`.
+
+Never read a SKILL.md file or a CONSTITUTION.md file.
+Never write code or tests.
+"""

@@ -1,0 +1,28 @@
+phases:
+  phase-1:
+    team: implementation
+    roles:
+      - name: implementation-executor
+        skills:
+          - path: shared/skills/core-risk-assessment/SKILL.md
+            intensity: medium
+          - path: shared/skills/implementation-executor/SKILL.md
+            intensity: high
+
+  phase-2:
+    team: testing
+    roles:
+      - name: unit-test-writer
+        skills:
+          - path: shared/skills/unit-tests/SKILL.md
+            intensity: high
+      - name: integration-test-writer
+        skills:
+          - path: shared/skills/integration-testing/SKILL.md
+            intensity: high
+      - name: e2e-test-writer
+        skills:
+          - path: shared/skills/e2e-generate/SKILL.md
+            intensity: high
+          - path: shared/skills/hack-me/SKILL.md
+            intensity: medium
