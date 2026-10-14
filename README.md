@@ -1,5 +1,3 @@
----
-
 ## ⚡ Custom Layer (Fork Extension)
 
 This fork adds a structured orchestration layer on top of the original OmA. The original features remain unchanged.
