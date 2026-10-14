@@ -73,12 +73,18 @@ Run a goal-style autonomous delivery loop:
 
 Note: extension install/update commands run in terminal mode (`gemini extensions ...`), not in interactive slash-command mode.
 
-## What's New in v0.9.2
+## What's New in v1.0.0
 
-- **Orbit Router Diagnostics**: The quiet `BeforeModel` router can now write an opt-in last-decision trace to `.omg/state/model-router-last.json`.
-- **Trace Without Noise**: Set `OMG_MODEL_ROUTING_TRACE=1` to capture selected lane, model, strategy, and match reason without restoring the old per-request banner.
-- **Doctor/Status Visibility**: `/oma:doctor`, `/oma:status`, `/oma:model`, and hook validation guidance now account for router trace freshness and missing custom lane mappings.
-- **Version Bump**: Bumped project and extension version to `v0.9.2`.
+This release introduces a structured orchestration layer on top of the original OmA. The original extension remains unchanged.
+
+- **Custom Layer**: A new multi-team, multi-workflow system for structured engineering delivery.
+- **Three Workflows**: `exec-light` (2 teams), `exec-standard` (3 teams), `exec-complex` (4 teams).
+- **Four Teams**: `risk`, `implementation`, `testing`, `verification` — each with its own constitution and prompt template.
+- **Verification Script**: `scripts/verify-ledger.js` verifies task codes against the codebase.
+- **Workspace Expansion Hook**: `setup-workspace.js` grants subagents access to plugin files.
+- **Model Routing Hook**: `oma-router-agy.js` selects models based on the active lane.
+- **Templates and Schemas**: `_SCHEMA.md` and `_TEMPLATE/` for creating new teams and workflows.
+- **Version Bump**: Version updated from `v0.9.2` to `v1.0.0`.
 
 ## ⚡ Custom Layer (Fork Extension)
 
