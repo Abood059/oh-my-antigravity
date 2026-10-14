@@ -1,46 +1,3 @@
-## ⚡ Custom Layer (Fork Extension)
-
-This fork adds a structured orchestration layer on top of the original OmA. The original features remain unchanged.
-
-### What It Adds
-
-| Component | Purpose |
-|---|---|
-| `shared/` | Shared infrastructure: state, task-codes, verification, report protocol, skill intensity. |
-| `teams/` | Four reusable teams: `risk`, `implementation`, `testing`, `verification`. |
-| `workflows/` | Three execution workflows (see below). |
-| `skills/` | Entry skills for each workflow. |
-| `hooks/` | Workspace expansion and model routing. |
-| `scripts/verify-ledger.js` | Task-code verification against the codebase. |
-
-### Workflows
-
-| Command | Teams | Use Case |
-|---|---|---|
-| `/oh-my-antigravity:exec-light` | 2 (implementation + testing) | Small, low-risk tasks. |
-| `/oh-my-antigravity:exec-standard` | 3 (+ verification) | Standard tasks needing independent verification. |
-| `/oh-my-antigravity:exec-complex` | 4 (+ risk assessment) | Critical, high-risk, security-sensitive tasks. |
-
-### Key Principles
-
-- **Specification first.** All work anchors to the specification and expected behavior, not to the current code.
-- **Uncertainty rule.** When unsure, stop and ask the Coordinator. Never guess.
-- **No `@` for skills.** The Coordinator passes absolute paths to subagents. Subagents read the skill files themselves.
-- **Proof over theory.** Verification findings require reproducible evidence. A theoretical vulnerability is not a finding.
-
-### Reference
-
-- `teams/_SCHEMA.md` — how to create a new team.
-- `workflows/_SCHEMA.md` — how to create a new workflow.
-- `teams/_TEMPLATE/` — blank team template.
-- `workflows/_TEMPLATE/` — blank workflow template.
-
-### Compatibility
-
-- **CLI:** full support (all features).
-- **IDE / Antigravity 2.0:** skills, agents, rules, and commands work. Hooks run but only side effects apply (stdout is ignored).
-
----
 # oh-my-antigravity (OmA)
 [![Release](https://img.shields.io/github/v/tag/Joonghyun-Lee-Frieren/oh-my-antigravity?sort=semver&label=release)](https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity/releases)
 [![Version Check](https://img.shields.io/github/actions/workflow/status/Joonghyun-Lee-Frieren/oh-my-antigravity/version-check.yml?branch=main&label=version%20check)](https://github.com/Joonghyun-Lee-Frieren/oh-my-antigravity/actions/workflows/version-check.yml)
@@ -122,6 +79,50 @@ Note: extension install/update commands run in terminal mode (`gemini extensions
 - **Trace Without Noise**: Set `OMG_MODEL_ROUTING_TRACE=1` to capture selected lane, model, strategy, and match reason without restoring the old per-request banner.
 - **Doctor/Status Visibility**: `/oma:doctor`, `/oma:status`, `/oma:model`, and hook validation guidance now account for router trace freshness and missing custom lane mappings.
 - **Version Bump**: Bumped project and extension version to `v0.9.2`.
+
+## ⚡ Custom Layer (Fork Extension)
+
+This fork adds a structured orchestration layer on top of the original OmA. The original features remain unchanged.
+
+### What It Adds
+
+| Component | Purpose |
+|---|---|
+| `shared/` | Shared infrastructure: state, task-codes, verification, report protocol, skill intensity. |
+| `teams/` | Four reusable teams: `risk`, `implementation`, `testing`, `verification`. |
+| `workflows/` | Three execution workflows (see below). |
+| `skills/` | Entry skills for each workflow. |
+| `hooks/` | Workspace expansion and model routing. |
+| `scripts/verify-ledger.js` | Task-code verification against the codebase. |
+
+### Workflows
+
+| Command | Teams | Use Case |
+|---|---|---|
+| `/oh-my-antigravity:exec-light` | 2 (implementation + testing) | Small, low-risk tasks. |
+| `/oh-my-antigravity:exec-standard` | 3 (+ verification) | Standard tasks needing independent verification. |
+| `/oh-my-antigravity:exec-complex` | 4 (+ risk assessment) | Critical, high-risk, security-sensitive tasks. |
+
+### Key Principles
+
+- **Specification first.** All work anchors to the specification and expected behavior, not to the current code.
+- **Uncertainty rule.** When unsure, stop and ask the Coordinator. Never guess.
+- **No `@` for skills.** The Coordinator passes absolute paths to subagents. Subagents read the skill files themselves.
+- **Proof over theory.** Verification findings require reproducible evidence. A theoretical vulnerability is not a finding.
+
+### Reference
+
+- `teams/_SCHEMA.md` — how to create a new team.
+- `workflows/_SCHEMA.md` — how to create a new workflow.
+- `teams/_TEMPLATE/` — blank team template.
+- `workflows/_TEMPLATE/` — blank workflow template.
+
+### Compatibility
+
+- **CLI:** full support (all features).
+- **IDE / Antigravity 2.0:** skills, agents, rules, and commands work. Hooks run but only side effects apply (stdout is ignored).
+
+---
 
 ## Extension Boundary and Upgrade Safety
 
